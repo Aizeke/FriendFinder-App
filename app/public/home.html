@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <container>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h1 class="display-4 d-flex justify-content-center font-weight-bold">Friend Finder</h1>
+                    <hr class="my-4">
+                    <h1 class="d-flex justify-content-center">Answer a few basic questions.</h1>
+                    <h3 class="d-flex justify-content-center">Then find the friend with the greatest compatibility!</h3>
+                    <div class="button-layout btn-lg d-flex justify-content-center mt-3">
+                        <button class="btn btn-outline-primary mr-3 view-survey" role="button">Take Survey</a>
+                    </div>
+                </div>
+                <a href="/api/friends" id="apiList">API Friends List</a> |
+                <a href="https://github.com/Aizeke/FriendFinder-App" id="githubRepo">Github Repo</a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </container>
+
+    <script src="../../server.js"></script>
+</body>
+
+</html>

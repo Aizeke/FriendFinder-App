@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservation Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <container>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h1 class="display-4 d-flex justify-content-center font-weight-bolder">Survey Questions</h1>
+                    <hr class="my-4">
+                    <h1 class="d-flex justify-content-center">About You</h1>
+                    <input type="text" class="form-control mb-3" id="inputName" placeholder="Full Name">
+                    <input type="text" class="form-control" id="inputImage" placeholder="Image URL">
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Survey
+                    </div>
+                    <div class="card-body card-reservation">
+                        <form>
+                            <div class="form-group inputChoices">
+                                <label for="q-1">Your mind is always buzzing with unexplored ideas and plans.</label>
+                                <select class="form-control" id="q-1">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-2">Generally speaking, you rely more on your experience than your imagination.</label>
+                                <select class="form-control" id="q-2">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-3">You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                                <select class="form-control" id="q-3">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-4">You rarely do something just out of sheer curiosity.</label>
+                                <select class="form-control" id="q-4">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-5">People can rarely upset you.</label>
+                                <select class="form-control" id="q-5">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-6">It is often difficult for you to relate to other people’s feelings.</label>
+                                <select class="form-control" id="q-6">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-7">In a discussion, truth should be more important than people’s sensitivities.</label>
+                                <select class="form-control" id="q-7">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-8">You rarely get carried away by fantasies and ideas.</label>
+                                <select class="form-control" id="q-8">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-9">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
+                                <select class="form-control" id="q-9">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                                <label for="q-10">You feel more energetic after spending time with a group of people.</label>
+                                <select class="form-control" id="q-10">
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg submission">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <a href="/api/friends" id="apiList">API Friends List</a> |
+                <a href="https://github.com/Aizeke/FriendFinder-App" id="githubRepo">Github Repo</a>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <script src="../../server.js"></script>
+    </container>
+</body>
+
+</html>
