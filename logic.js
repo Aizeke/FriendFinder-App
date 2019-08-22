@@ -2,6 +2,7 @@ var displayBestMatch = function (score) {
 
     $.get("/api/friends", function (data) {
 
+        console.log(data);
         // needs work on
         var bestMatch = {
             difference: 50,
@@ -15,13 +16,14 @@ var displayBestMatch = function (score) {
             var difference = 0;
 
             for (var j = 0; j < score.length; j++) {
-                difference += Math.abs(score[j] - data.scores[j]);
-            }
+                difference += Math.abs(score[j] - data[i].scores[j]);
+                console.log(difference);
 
-            if (difference < bestMatch.difference) {
-                bestMatch.difference = difference;
-                bestMatch.name = data.name;
-                bestMatch.image = data.photo;
+                if (difference < bestMatch.difference) {
+                    bestMatch.difference = difference;
+                    bestMatch.name = data[i].name;
+                    bestMatch.image = data[i].photo;
+                }
             }
         }
 
@@ -39,15 +41,15 @@ $(".submission").on("click", function (event) {
     var fullName = $('#inputName').val().trim();
     var url = $('#inputImage').val().trim();
     var answers = [$('#q-1').val(),
-    $('#q-2').val().trim(),
-    $('#q-3').val().trim(),
-    $('#q-4').val().trim(),
-    $('#q-5').val().trim(),
-    $('#q-6').val().trim(),
-    $('#q-7').val().trim(),
-    $('#q-8').val().trim(),
-    $('#q-9').val().trim(),
-    $('#q-10').val().trim()];
+    $('#q-2').val(),
+    $('#q-3').val(),
+    $('#q-4').val(),
+    $('#q-5').val(),
+    $('#q-6').val(),
+    $('#q-7').val(),
+    $('#q-8').val(),
+    $('#q-9').val(),
+    $('#q-10').val()];
 
     if (fullName === "" || url === "") {
         alert("Name or Photo Feild cannot be left blank!");
@@ -64,7 +66,7 @@ $(".submission").on("click", function (event) {
 
         $.post({ url: "/api/friends", contentType: 'application/json' }, JSON.stringify(newFriend));
 
-        fullName.val("");
-        url.val("");
+        $('#inputName').val("");
+        $('#inputImage').val("");
     }
 });
