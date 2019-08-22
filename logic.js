@@ -1,27 +1,33 @@
 var displayBestMatch = function (score) {
-    
-    $.get("/api/friends", function (data) {
-        
-        for(var i = 0; i < data.length; i++){
-            
 
-        }
+    $.get("/api/friends", function (data) {
 
         // needs work on
-        var bestMatch;
-        var totalDifference = 50;
+        var bestMatch = {
+            difference: 50,
+            name: "",
+            image: ""
+        };
 
-        for (var i = 0; i < personList.length; i++) {
-            for (var j = 0; j < newPerson.scores.length; j++) {
-                var difference;
-                difference += Math.abs(newPerson.scores[j] - personList[i].scores[j]);
-                if (totalDifference < difference) {
-                    bestMatch = personList[i].name;
-                    difference = 0;
-                    totalDifference = difference;
-                }
+        //diff calc
+        for (var i = 0; i < data.length; i++) {
+
+            var difference = 0;
+
+            for (var j = 0; j < score.length; j++) {
+                difference += Math.abs(score[j] - data.scores[j]);
+            }
+
+            if (difference < bestMatch.difference) {
+                bestMatch.difference = difference;
+                bestMatch.name = data.name;
+                bestMatch.image = data.photo;
             }
         }
+
+        alert(`Your Best Match is: ${bestMatch.name}\n
+        With a difference of: ${bestMatch.difference}\n
+        Photo: ${bestMatch.image}`);
     })
 }
 
@@ -56,6 +62,9 @@ $(".submission").on("click", function (event) {
 
         displayBestMatch(answers);
 
-        $.post("/api/friends", JSON.stringify(newFriend));
+        $.post({ url: "/api/friends", contentType: 'application/json' }, JSON.stringify(newFriend));
+
+        fullName.val("");
+        url.val("");
     }
 });
